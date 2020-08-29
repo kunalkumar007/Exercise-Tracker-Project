@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'production') {
 	app.get('*',(req,res)=>{
 		res.sendFile(path.resolve(__dirname,'client','build','index.html'))
 	})
-
+}
 mongoose.connect(
 	`mongodb+srv://${process.env.USER}:${process.env.PASS}@cluster0.wintt.mongodb.net/<dbname>?retryWrites=true&w=majority`,
 	{ useNewUrlParser: true, useUnifiedTopology: true },
