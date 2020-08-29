@@ -4,7 +4,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
-dotenv.config();
+// dotenv.config();
+if (app.get('env') == 'development') {
+	require('dotenv').config();
+}
 console.log(process.env.PASS);
 // utility files.
 app.use(express.json());
