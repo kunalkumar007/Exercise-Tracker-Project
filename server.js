@@ -4,10 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
-// dotenv.config();
-if (app.get('env') == 'development') {
-	require('dotenv').config();
-}
+dotenv.config({ silent: process.env.NODE_ENV === 'production' });
+
 console.log(process.env.PASS);
 // utility files.
 app.use(express.json());
