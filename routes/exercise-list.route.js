@@ -24,7 +24,7 @@ router.post('/user', (req, res) => {
 
 router.delete('/users/:id', (req, res) => {
 	User.findByIdAndDelete({ _id: req.params.id })
-		.then((result) => res.json(result))
+		.then((result) => res.json("deleted!!"))
 		.catch((err) => res.status(400).json(err));
 });
 
@@ -38,13 +38,13 @@ router.post('/exercise-list', (req, res) => {
 	const { username, description, duration } = req.body;
 	const Exercise = new ExerciseList({ username, description, duration });
 	Exercise.save()
-		.then((result) => res.json("deleted"))
+		.then((result) => res.json("posted!!"))
 		.catch((err) => res.status(400).json(err));
 });
 
 router.delete('/exercise-list/:id', (req, res) => {
 	ExerciseList.findByIdAndDelete({ _id: req.params.id })
-		.then((result) => res.json(result))
+		.then((result) => res.json("deleted!!"))
 		.catch((err) => res.status(400).json(err));
 });
 
